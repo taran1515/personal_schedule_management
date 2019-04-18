@@ -1,0 +1,33 @@
+CREATE TABLE user(
+    f_name VARCHAR(20),
+    l_name VARCHAR(20),
+    user_id VARCHAR(20) NOT NULL,
+	email VARCHAR(20),
+    password VARCHAR(20),
+    image blob,
+    PRIMARY KEY(user_id)
+    )
+	
+
+
+CREATE TABLE label
+(
+    label_id INT AUTO_INCREMENT,
+    label VARCHAR(20),
+    PRIMARY KEY(label_id)
+    )
+
+CREATE TABLE task
+(
+    user_id VARCHAR(20) NOT NULL,
+    task_id INTEGER AUTO_INCREMENT,
+    task VARCHAR(20),
+    label_id INTEGER,
+    start TIME,
+    end TIME,
+    t_time TIME,
+    date DATE,
+    FOREIGN KEY (user_id) REFERENCES user(user_id),
+    FOREIGN KEY (label_id) REFERENCES label(label_id),
+    PRIMARY KEY (task_id)
+)

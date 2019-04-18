@@ -1,0 +1,38 @@
+<?php
+SESSION_START(); 
+$db = mysqli_connect('localhost','root','');
+
+mysqli_select_db($db,'psm');
+
+    
+
+$label1= $_POST['label1'];
+
+
+
+
+$task1 = $_POST['task1'];
+
+
+$task1a = $_POST['task-time1a'];
+$task1b = $_POST['task-time1b'];
+
+$n=count($_POST['task1']);
+
+
+		
+for($x=0;$x<$n;$x++){
+$sq1 = "INSERT INTO review(label,task,start_time,end_time) VALUES('$label1[$x]','$task1[$x]','$task1a[$x]','$task1b[$x]')";
+mysqli_query($db,$sq1);
+}
+/*$sq3 = "INSERT INTO review(label,task,start_time,end_time) VALUES('$label3','$task3','$task3a','$task3b')";
+mysqli_query($db,$sq3);
+$sq4 = "INSERT INTO review(label,task,start_time,end_time) VALUES('$label4','$task4','$task3a','$task4b')";
+mysqli_query($db,$sq4);*/
+
+echo"
+<h1>
+<a href='review.php'>Click here to review your schedule for today</a>";
+echo"
+<h1>
+<a href='dbms_pr.php'>Click here to add more tasks</a>";?>
