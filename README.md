@@ -1,1 +1,1 @@
-jknjkdfvnjkernvejkv
+A To-do list application that takes tasks submitted by a user in a form and saves them in a MySQL database. The tasks are also retrieved from the database and displayed on the web page, based on their priority, with a delete button beside each task.
